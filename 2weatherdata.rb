@@ -13,7 +13,7 @@ def temp_differential(weather_data_file)
     end
   end
 
-  day_array = []
+  day_array = []  # edge case to consider, 31 day months and february
   index = 1
   while index < 31
     day_array << {day: day_data[index][0], maxtemp: day_data[index][1].to_i, mintemp: day_data[index][2].to_i}
@@ -21,7 +21,6 @@ def temp_differential(weather_data_file)
   end
 
   # p day_array
-
 
   # temp_diff = day_array[3][:maxtemp] - day_array[3][:mintemp]
   # temp_diff = day_array[6][:maxtemp] - day_array[6][:mintemp]
@@ -42,6 +41,7 @@ end
 
 p temp_differential(wthr_file)
 
+#Personal directions
 # going to need to use min max
 # figure out what parts of the file are needed.
 # take those parts and assign them to hash keys in and array of hashes
